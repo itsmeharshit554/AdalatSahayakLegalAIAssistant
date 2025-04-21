@@ -5,4 +5,4 @@ openai==1.75.0
 pdfminer==20191125
 torch==2.6.0
 transformers==4.51.3
-
+gunicorn
