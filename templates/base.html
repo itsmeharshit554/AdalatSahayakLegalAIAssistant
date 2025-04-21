@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adalat Sahayak.AI</title>
+    <link href="{{url_for('static',filename='style.css')}}"  rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="chatbot_main">
+<div class="chatbot_as ">
+
+    <div class="head-bot">
+        <div class="name-left">
+            <img src="{{url_for('static',filename='AS_ai.svg')}}" width="200px" class="logo-as" alt="My Happy SVG"/>
+        </div>
+        <div class="btn-above">
+            <button class="lang-right" style="z-index:5; padding: 5px;" ><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 78 74" fill="none">
+                <path d="M55.3018 46.6102C54.3446 47.5478 53.3457 48.4286 52.2974 49.2552L52.235 49.3021L52.209 49.3144L47.4643 35.2926H62.9494C61.7424 38.7518 59.9086 41.7373 57.5571 44.2761L57.5831 44.2465C53.7593 39.9559 53.7463 38.5618 53.7463 38.5618H49.7742C49.7742 38.5618 49.9355 40.6516 55.2992 46.6102H55.3018ZM76.3768 69.1517C76.3508 70.9825 74.7797 72.4579 72.8444 72.4579C72.8314 72.4579 72.821 72.4579 72.808 72.4579H43.9605L55.822 60.0325H55.8377L53.4315 52.934L53.4523 52.9192C53.4523 52.9192 55.2992 51.4141 57.6039 49.0948C59.919 51.4709 62.9026 54.333 66.7628 57.7428L69.2677 55.3618C65.1318 51.8039 62.104 48.9789 59.8747 46.7139C62.9754 43.6001 65.2879 39.7486 66.4922 35.4678L66.5364 35.2852L73.1539 35.2901V32.391H58.4233V27.7056H53.6422V32.391H46.4785L41.0446 16.3263L41.0628 16.3929H72.8106C72.821 16.3929 72.8366 16.3929 72.8496 16.3929C74.7823 16.3929 76.3534 17.8684 76.3768 19.6967V69.1517ZM21.9074 41.6188C21.8996 41.6188 21.8918 41.6188 21.8814 41.6188C15.1495 41.6188 9.69212 36.4424 9.69212 30.0569C9.69212 23.6715 15.1495 18.4951 21.8814 18.4951C21.8892 18.4951 21.8996 18.4951 21.9074 18.4951H21.9048C21.9386 18.4951 21.9777 18.4951 22.0167 18.4951C25.1329 18.4951 27.9657 19.6399 30.0752 21.5101L30.0674 21.5052L26.8497 24.4413C25.5829 23.3261 23.8765 22.6402 22.0037 22.6402C21.9673 22.6402 21.9308 22.6402 21.897 22.6402H21.9022C17.6414 22.7191 14.2182 26.0155 14.2182 30.0668C14.2182 34.1182 17.6388 37.4145 21.8918 37.4935H21.8996C22.0479 37.5033 22.2196 37.5107 22.3938 37.5107C25.804 37.5107 28.6186 35.0829 29.0165 31.9494L29.0191 31.9198L21.9074 31.9124V27.9548H33.3163C33.501 28.6629 33.6077 29.4747 33.6077 30.3086C33.6207 30.5035 33.6285 30.7355 33.6285 30.9649C33.6285 36.8569 28.5925 41.6336 22.3808 41.6336C22.2118 41.6336 22.0427 41.6312 21.8736 41.6238H21.897L21.9074 41.6188ZM72.8106 14.8558H40.5425L35.5144 0H5.19202C2.32549 0.0098693 0.00520243 2.21072 0 4.92971V55.1102C0.0104049 57.8267 2.32809 60.0251 5.18942 60.0349H37.6968L42.4856 74H72.808C72.8158 74 72.8236 74 72.834 74C75.6667 74 77.9688 71.8362 78 69.1566V19.7041C77.9662 17.0196 75.6667 14.8582 72.8314 14.8582C72.8236 14.8582 72.8158 14.8582 72.808 14.8582L72.8106 14.8558Z" fill="white"/>
+              </svg></button>
+        
+
+            
+              <button class="btn-exit-mb"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M13.41 12L17.71 7.71C17.8983 7.5217 18.0041 7.2663 18.0041 7C18.0041 6.7337 17.8983 6.47831 17.71 6.29C17.5217 6.1017 17.2663 5.99591 17 5.99591C16.7337 5.99591 16.4783 6.1017 16.29 6.29L12 10.59L7.71 6.29C7.5217 6.1017 7.2663 5.99591 7 5.99591C6.7337 5.99591 6.4783 6.1017 6.29 6.29C6.1017 6.47831 5.99591 6.7337 5.99591 7C5.99591 7.2663 6.1017 7.5217 6.29 7.71L10.59 12L6.29 16.29C6.19627 16.383 6.12188 16.4936 6.07111 16.6154C6.02034 16.7373 5.9942 16.868 5.9942 17C5.9942 17.132 6.02034 17.2627 6.07111 17.3846C6.12188 17.5064 6.19627 17.617 6.29 17.71C6.38296 17.8037 6.49356 17.8781 6.61542 17.9289C6.73728 17.9797 6.86799 18.0058 7 18.0058C7.13201 18.0058 7.26272 17.9797 7.38458 17.9289C7.50644 17.8781 7.61704 17.8037 7.71 17.71L12 13.41L16.29 17.71C16.383 17.8037 16.4936 17.8781 16.6154 17.9289C16.7373 17.9797 16.868 18.0058 17 18.0058C17.132 18.0058 17.2627 17.9797 17.3846 17.9289C17.5064 17.8781 17.617 17.8037 17.71 17.71C17.8037 17.617 17.8781 17.5064 17.9289 17.3846C17.9797 17.2627 18.0058 17.132 18.0058 17C18.0058 16.868 17.9797 16.7373 17.9289 16.6154C17.8781 16.4936 17.8037 16.383 17.71 16.29L13.41 12Z" fill="white"/>
+              </svg></button>
+              </div>
+              
+    </div>
+    <div id="google_translate_element" style="z-index: 1; color: transparent;"></div>
+    <div class="chat-section">
+        <div class="container ss">
+        <ul class="chat-message" id="chad">
+            <li class="incoming"><p>Hi! How are you</p></li><br>
+        </ul></div>
+    </div>
+    <div class="chat-input">
+        <form method="POST" class="ch-input" action="/" id="formss" enctype="multipart/form-data">
+            <button class="doc_enter" type="button" onclick="document.getElementById('pdf_file').click();">
+                + 
+            </button>
+            <input class="putin" type="text" id="usertext" name="user_text" placeholder="Hi! How can I help you.">
+            <input type="file" id="pdf_file" name="pdf_file" accept="application/pdf" style="display: none;">
+            <button class="subb" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="" viewBox="0 0 53 46" fill="none">
+                    <path d="M48.5964 16.6804L11.4984 0.7167C10.0344 0.0895748 8.3812 -0.133686 6.7643 0.077357C5.14741 0.2884 3.64549 0.923476 2.46331 1.896C1.28114 2.86852 0.476242 4.13116 0.158365 5.51177C-0.159512 6.89237 0.0251 8.32376 0.68703 9.61077L7.04669 21.8572C7.19099 22.1533 7.26531 22.4712 7.26531 22.7922C7.26531 23.1133 7.19099 23.4312 7.04669 23.7273L0.68703 35.9737C0.148315 37.0153 -0.0794253 38.1562 0.0245057 39.2927C0.128437 40.4293 0.560744 41.5255 1.28214 42.4817C2.00354 43.4379 2.99115 44.2238 4.15522 44.7679C5.3193 45.3121 6.62293 45.5973 7.94764 45.5975C9.18838 45.5869 10.4106 45.3375 11.5249 44.8678L48.6229 28.9041C49.9388 28.3344 51.0449 27.4612 51.8178 26.382C52.5907 25.3028 53 24.06 53 22.7922C53 21.5245 52.5907 20.2817 51.8178 19.2025C51.0449 18.1233 49.9388 17.2501 48.6229 16.6804H48.5964ZM46.2381 24.8219L9.14007 40.7856C8.65293 40.9869 8.10592 41.0552 7.57238 40.9814C7.03885 40.9076 6.5443 40.6951 6.15504 40.3725C5.76579 40.0499 5.50044 39.6326 5.39458 39.1766C5.28872 38.7205 5.3474 38.2475 5.56277 37.8209L11.8959 25.5745C11.9779 25.411 12.0487 25.2434 12.1079 25.0728H30.3654C31.0682 25.0728 31.7422 24.8325 32.2392 24.4048C32.7361 23.9771 33.0153 23.3971 33.0153 22.7922C33.0153 22.1874 32.7361 21.6073 32.2392 21.1797C31.7422 20.752 31.0682 20.5117 30.3654 20.5117H12.1079C12.0487 20.3411 11.9779 20.1735 11.8959 20.01L5.56277 7.76354C5.3474 7.337 5.28872 6.86398 5.39458 6.40792C5.50044 5.95186 5.76579 5.53456 6.15504 5.21196C6.5443 4.88937 7.03885 4.67691 7.57238 4.60307C8.10592 4.52923 8.65293 4.59755 9.14007 4.79885L46.2381 20.7626C46.6721 20.9539 47.0364 21.2447 47.2907 21.6028C47.5451 21.9609 47.6797 22.3725 47.6797 22.7922C47.6797 23.212 47.5451 23.6235 47.2907 23.9817C47.0364 24.3398 46.6721 24.6305 46.2381 24.8219Z" fill="white"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+            
+    </div></div></div>
+
+<button class="open-btn"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 101 138" fill="none">
+    <path d="M2 46.7388L12.91 2L50.5992 22.6793L88.2883 2L99 46.7388L72.0225 33.8142L99 136.216H65.8732L50.5992 33.8142L34.135 136.216H2.19836L30.1677 33.8142L2.19836 46.7388H2Z" fill="black"/>
+    <path d="M2 46.7388L12.91 2L50.5992 22.6793L88.2883 2L99 46.7388L72.0225 33.8142L99 136.216H65.8732L50.5992 33.8142L34.135 136.216H2.19836L30.1677 33.8142L2.19836 46.7388H2Z" fill="black"/>
+    <path d="M2 46.7388L12.91 2L50.5992 22.6793L88.2883 2L99 46.7388L72.0225 33.8142L99 136.216H65.8732L50.5992 33.8142L34.135 136.216H2.19836L30.1677 33.8142L2.19836 46.7388H2Z" stroke="white" stroke-width="2"/>
+    <path d="M6.75391 50.9607L16.5061 8.3335L50.1957 28.0367L83.8852 8.3335L93.4602 50.9607L69.3455 38.6462L93.4602 136.215H63.8488L50.1957 38.6462L35.4787 136.215H6.93122L31.9324 38.6462L6.93122 50.9607H6.75391Z" fill="black"/>
+    <path d="M6.75391 50.9607L16.5061 8.3335L50.1957 28.0367L83.8852 8.3335L93.4602 50.9607L69.3455 38.6462L93.4602 136.215H63.8488L50.1957 38.6462L35.4787 136.215H6.93122L31.9324 38.6462L6.93122 50.9607H6.75391Z" fill="white"/>
+    <path d="M6.75391 50.9607L16.5061 8.3335L50.1957 28.0367L83.8852 8.3335L93.4602 50.9607L69.3455 38.6462L93.4602 136.215H63.8488L50.1957 38.6462L35.4787 136.215H6.93122L31.9324 38.6462L6.93122 50.9607H6.75391Z" stroke="white" stroke-width="2"/>
+  </svg></button> 
+</div>
+<script src="../static/app.js"></script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en,hi', includedLanguages: 'en,hi,bn,mr,te,ta,gu,ur,ka,or,ml,pa,mai,bho', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+}
+</script>
+<!-- <script>
+$(document).ready(function() {
+    $("#formss").on("submit", function(event) {
+        event.preventDefault();
+
+        var formData = new FormData(this); // Use FormData to handle both text and file inputs
+
+        $.ajax({
+            url: "/",
+            type: "POST",
+            data: formData,
+            processData: false, // Prevent jQuery from processing the data
+            contentType: false, // Prevent jQuery from setting the content type
+            success: function(data) {
+                if (data.error) {
+                    alert(data.error);
+                } else {
+                    var aiInput = '<li class="incoming"><p>' + data.ai_text + '</p></li><br>';
+                    $("#chad").append(aiInput);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("Error:", xhr.responseText);
+            }
+        });
+    });
+});
+</script> -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+$(document).ready(function() {
+    $("#formss").off("submit").on("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        var formData = new FormData(this); // Use FormData to handle both text and file inputs
+
+        // Check if a PDF file is submitted
+        var pdfFile = $("#pdf_file")[0].files.length > 0;
+
+        // Display the user's input or "Processing PDF" if a PDF is submitted
+        var userInput;
+        if (pdfFile) {
+            userInput = '<li class="outgoing"><p>Processing PDF...</p></li><br>';
+        } else {
+            userInput = '<li class="outgoing"><p>' + $("#usertext").val().trim() + '</p></li><br>';
+        }
+        $("#chad").append(userInput);
+
+        // Display a "Loading..." message for the AI response
+        var loadingMessage = '<li class="incoming" id="loading-message"><p>Loading...</p></li><br>';
+        $("#chad").append(loadingMessage);
+
+        // Clear the input field
+        $("#usertext").val("");
+
+        // Send an AJAX request to the server
+        $.ajax({
+            url: "/",
+            type: "POST",
+            data: formData,
+            processData: false, // Prevent jQuery from processing the data
+            contentType: false, // Prevent jQuery from setting the content type
+            success: function(data) {
+                if (data.error) {
+                    // Replace the "Loading..." message with an error message
+                    $("#loading-message").replaceWith('<li class="incoming"><p>' + data.error + '</p></li><br>');
+                } else {
+                    // Replace the "Loading..." message with the AI's response
+                    $("#loading-message").replaceWith('<li class="incoming"><p>' + data.ai_text + '</p></li><br>');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("Error:", xhr.responseText); // Log any errors
+
+                // Replace the "Loading..." message with a generic error message
+                $("#loading-message").replaceWith('<li class="incoming"><p>An error occurred. Please try again.</p></li><br>');
+            }
+        });
+    });
+});
+
+
+</script>
+</body>
+</html>
