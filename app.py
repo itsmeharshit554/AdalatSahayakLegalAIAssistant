@@ -3,13 +3,22 @@ from pdfminer.high_level import extract_text
 from transformers import pipeline
 import os
 
-# Initialize the summarization pipeline with a lightweight model
-summarizer = pipeline('summarization', model="sshleifer/distilbart-cnn-12-6", device=-1)
-
 # Initialize Flask app
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'  # Folder to save uploaded PDFs
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+# Lazy loading: Initialize the summarizer as None
+summarizer = None
+
+def get_summarizer():
+    """
+    Lazy load the summarization pipeline.
+    """
+    global summarizer
+    if summarizer is None:
+        summarizer = pipeline('summarization', model="sshleifer/distilbart-cnn-12-6", device=-1)
+    return summarizer
 
 def clean_text(text):
     """
@@ -24,6 +33,7 @@ def as_summary(txt):
     try:
         # Truncate the input text to 1024 characters to reduce memory usage
         truncated_text = txt[:1024]
+        summarizer = get_summarizer()  # Load the model only when needed
         summary = summarizer(truncated_text, max_length=150, min_length=30, do_sample=False)
         out_text = summary[0]['summary_text']
         print(out_text)
