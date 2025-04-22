@@ -3,14 +3,14 @@ from pdfminer.high_level import extract_text
 from transformers import pipeline
 import os
 
-# Initialize the summarization pipeline
-summarizer = pipeline('summarization')
+# Initialize the summarization pipeline with a lightweight model
+summarizer = pipeline('summarization', model="sshleifer/distilbart-cnn-12-6", revision="main")
 
 # Initialize Flask app
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'  # Folder to save uploaded PDFs
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-
+    
 @app.route('/', methods=['GET', 'POST'])
 def index():
     user_text = None
@@ -24,7 +24,6 @@ def index():
             print(user_text)
             print(ai_text)
             return jsonify({'user_text': user_text, 'ai_text': ai_text})
-        
         
         # Check if a PDF file is uploaded
         elif 'pdf_file' in request.files:
