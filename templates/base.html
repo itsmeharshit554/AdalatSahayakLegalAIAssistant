@@ -143,7 +143,7 @@ $(document).ready(function() {
                 console.error("Error:", xhr.responseText); // Log any errors
 
                 // Replace the "Loading..." message with a generic error message
-                $("#loading-message").replaceWith('<li class="incoming"><p>An error occurred. Please try again.</p></li><br>');
+                $("#loading-message").replaceWith('<li class="incoming"><p>An error occurred due to memory exceeding limit on Render Backend. (limit 512MB)</p></li><br>');
             }
         });
     });
